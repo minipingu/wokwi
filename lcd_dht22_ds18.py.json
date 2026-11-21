@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "author": "dede nurhidayat",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-2w",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {
+        "env": "micropython-20260406-v1.28.0"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -60.8,
+      "left": 178.4,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 125.1,
+      "left": 167.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 215.15,
+      "left": 307.2,
+      "attrs": {
+        "value": "1000"
+      }
+    },
+    {
+      "type": "wokwi-ds18b20",
+      "id": "temp1",
+      "top": 123.67,
+      "left": 330.48,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "pico:VBUS",
+      "lcd1:VCC",
+      "red",
+      [
+        "h23.06",
+        "v-22.55"
+      ]
+    ],
+    [
+      "lcd1:GND",
+      "pico:GND.8",
+      "black",
+      [
+        "h-9.6",
+        "v51.25"
+      ]
+    ],
+    [
+      "lcd1:SCL",
+      "pico:GP21",
+      "gold",
+      [
+        "h-38.4",
+        "v86.7",
+        "v32.05"
+      ]
+    ],
+    [
+      "pico:GP20",
+      "lcd1:SDA",
+      "blue",
+      [
+        "h32.66",
+        "v-147.45"
+      ]
+    ],
+    [
+      "dht1:VCC",
+      "pico:3V3_EN",
+      "red",
+      [
+        "h-28.8",
+        "v-192",
+        "h-80.66"
+      ]
+    ],
+    [
+      "dht1:SDA",
+      "pico:GP17",
+      "green",
+      [
+        "v9.6",
+        "h-95.9",
+        "v-63.99"
+      ]
+    ],
+    [
+      "dht1:GND",
+      "pico:GND.5",
+      "black",
+      [
+        "v28.8",
+        "h-153.6",
+        "v-92.79"
+      ]
+    ],
+    [
+      "temp1:VCC",
+      "r1:2",
+      "red",
+      [
+        "h28.8",
+        "v48"
+      ]
+    ],
+    [
+      "temp1:DQ",
+      "r1:1",
+      "green",
+      [
+        "v28.8",
+        "h-38.4",
+        "v19.2"
+      ]
+    ],
+    [
+      "temp1:VCC",
+      "pico:3V3_EN",
+      "red",
+      [
+        "h19.2",
+        "v-67.2",
+        "h-243.86"
+      ]
+    ],
+    [
+      "r1:1",
+      "pico:GP16",
+      "green",
+      [
+        "v86.4",
+        "h-186.26"
+      ]
+    ],
+    [
+      "temp1:GND",
+      "pico:GND.5",
+      "black",
+      [
+        "h-48",
+        "v163.2",
+        "h-172.8",
+        "v-140.79"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
